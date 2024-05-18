@@ -1,0 +1,69 @@
+<div class="container flex flex-column items-center">
+    <h1 class="mt-10 items-center">Add User</h1>
+    <form class="form w-50 m-10" [formGroup]="userForm">
+        <!-- firstName -->
+        <mat-form-field class="form-field w-100 mt-10" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Enter FirstName" formControlName="firstName">
+            @if (
+            hasError('firstName','required')
+            ) {
+            <mat-error>firstName is required!</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- lastName -->
+        <mat-form-field class="form-field w-100 mt-10" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Enter LastName" formControlName="lastName">
+            @if (
+            hasError('lastName','required')
+            ) {
+            <mat-error>lastName is required!</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field class="form-field w-100 mt-10" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Email" formControlName="email">
+            @if (
+            hasError('email','required')
+            ) {
+            <mat-error>email is required!</mat-error>
+            }
+            @else if (
+            hasError('email','email')
+            ) {
+            <mat-error>Please enter an valid email</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- contact Number -->
+        <mat-form-field class="form-field w-100 mt-10" appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="Enter Contact Number" formControlName="contact">
+            @if (
+            hasError('contact','required')
+            ) {
+            <mat-error>contact is required!</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- password -->
+        <mat-form-field class="form-field w-100 mt-10" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Enter Password" formControlName="password">
+            @if (
+            hasError('password','required')
+            ) {
+            <mat-error>password is required!</mat-error>
+            }
+        </mat-form-field>
+
+        <div class="gap-10 flex flex-end">
+            <button mat-raised-button color="white" (click)="cancelAddUser()">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" (click)="saveUser()">Save</button>
+        </div>
+    </form>
+</div>

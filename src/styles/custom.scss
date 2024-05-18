@@ -1,0 +1,67 @@
+$widths: 4;
+
+//for widths
+@for $i from 1 through $widths {
+    .w-#{$i*25} {
+        width: $i * 25% !important;
+    }
+}
+
+// for heigth
+@for $i from 1 through $widths {
+    .h-#{$i*25} {
+        height: $i * 25% !important;
+    }
+}
+
+// for margin
+@for $i from 1 through 100 {
+    $value: $i + px; // Define the value with units
+
+    .m-#{$i} {
+        margin: $value !important;
+    }
+    .mt-#{$i} {
+        margin-top: $value !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: $value !important;
+    }
+    .ml-#{$i} {
+        margin-left: $value !important;
+    }
+    .mr-#{$i} {
+        margin-right: $value !important;
+    }
+}
+
+
+// for padding
+@for $i from 1 through 100 {
+    @for $i from 1 through 100 {
+        .p-#{$i} {
+            padding: $i + px !important;
+        }
+        .pt-#{$i} {
+            padding-top: $i + px !important;
+        }
+        .pb-#{$i} {
+            padding-bottom: $i + px !important;
+        }
+        .pl-#{$i} {
+            padding-left: $i + px !important;
+        }
+        .pr-#{$i} {
+            padding-right: $i + px !important;
+        }
+        
+    }
+}
+
+
+// for gap
+@for $i from 1 through 100 {
+    .gap-#{$i} {
+        gap: $i + px !important;
+    }
+}
